@@ -1,0 +1,43 @@
+name: Deploy via FTP
+
+on:
+  push:
+    branches: [ "main" ]
+  workflow_dispatch:
+
+concurrency:
+  group: deploy-production
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Deploy to FTP server
+        uses: SamKirkland/FTP-Deploy-Action@v4
+        with:
+          server: ${{ secrets.FTP_SERVER }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          server-dir: ${{ secrets.FTP_SERVER_DIR }}
+          # protocol can be ftp, ftps, or sftp. Defaults to ftp.
+          protocol: ftp
+          # Set the local folder to deploy (defaults to project root)
+          local-dir: ./
+          # Prevent deleting files on the server (safer for uploads)
+          dangerous-clean-slate: false
+          exclude: |
+            **/.git*
+            **/.github/**
+            **/*.sql
+            **/uploads/**
+            **/test_*/**
+            **/*.md
+            README.md
+
+

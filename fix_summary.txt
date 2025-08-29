@@ -1,0 +1,24 @@
+PROBLEM: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'a.applicant_id' in 'on clause'
+
+ROOT CAUSE:
+The SQL queries in several files were trying to reference 'a.applicant_id' as a column in the applications table, but the actual column name appears to be 'jobseeker_id'. This mismatch was causing the SQL errors.
+
+FILES FIXED:
+
+1. admin/applications.php
+   - Changed all instances of 'a.applicant_id' to 'a.jobseeker_id' in the main query and the count query
+   - Updated JOIN statements to reference the correct column name
+
+2. admin/view-application.php
+   - Changed all instances of 'a.applicant_id' to 'a.jobseeker_id' in the SQL query
+   - Updated JOIN statements to reference the correct column name
+
+3. admin/reports.php
+   - Changed 'a.applicant_id' to 'a.jobseeker_id' in the JOIN statement
+
+4. job-details.php
+   - Changed 'applicant_id' to 'jobseeker_id' in both the SELECT query to check for existing applications
+   - Updated the column name in the INSERT query to use 'jobseeker_id' instead of 'applicant_id'
+
+SUMMARY:
+There was a naming inconsistency in the database schema where the applications table uses 'jobseeker_id' to refer to the user who applied for a job, but some SQL queries were incorrectly using 'applicant_id'. The changes standardized all references to use 'jobseeker_id' to match the actual database schema. 

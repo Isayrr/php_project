@@ -1,0 +1,474 @@
+/* Modern Sidebar Styles */
+:root {
+    --sidebar-bg: linear-gradient(180deg, #1e293b 0%, #0f172a 100%);
+    --sidebar-hover: rgba(59, 130, 246, 0.15);
+    --sidebar-active: rgba(59, 130, 246, 0.25);
+    --sidebar-text: #cbd5e1;
+    --sidebar-text-hover: #ffffff;
+    --sidebar-accent: #3b82f6;
+    --sidebar-border: rgba(255, 255, 255, 0.1);
+    --sidebar-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3);
+}
+
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 280px;
+    background: var(--sidebar-bg);
+    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    z-index: 900; /* Keep fixed headers above the sidebar */
+    overflow-y: auto;
+    overflow-x: hidden;
+    box-shadow: var(--sidebar-shadow);
+    border-right: 1px solid var(--sidebar-border);
+}
+
+.sidebar::-webkit-scrollbar {
+    width: 6px;
+}
+
+.sidebar::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.sidebar::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 3px;
+}
+
+.sidebar::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.3);
+}
+
+.sidebar.collapsed {
+    width: 80px;
+}
+
+.sidebar-header {
+    padding: 1.25rem 1.5rem; /* reduce vertical padding so bigger logo fits without pushing */
+    background: rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid var(--sidebar-border);
+    position: relative;
+}
+
+.sidebar-header::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 1.5rem;
+    right: 1.5rem;
+    height: 1px;
+    background: linear-gradient(90deg, transparent 0%, var(--sidebar-accent) 50%, transparent 100%);
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+    gap: 0.75rem;
+}
+
+.sidebar-logo {
+    width: 64px;
+    height: 64px;
+    object-fit: cover;
+    border-radius: 12px;
+    border: 2px solid var(--sidebar-accent);
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+}
+
+.sidebar-logo:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 20px rgba(59, 130, 246, 0.4);
+}
+
+.sidebar-header h3 {
+    color: var(--sidebar-text-hover);
+    margin: 0;
+    font-size: 1.25rem;
+    font-weight: 700;
+    white-space: nowrap;
+    overflow: hidden;
+    letter-spacing: 0.025em;
+    background: linear-gradient(135deg, #ffffff 0%, #cbd5e1 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.sidebar-header .toggle-btn {
+    background: none;
+    border: none;
+    color: var(--sidebar-text);
+    font-size: 1.25rem;
+    cursor: pointer;
+    padding: 0.5rem;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    z-index: 1300; /* Keep toggle above adjacent header rounding */
+}
+
+.sidebar-header .toggle-btn:hover {
+    color: var(--sidebar-text-hover);
+    background: var(--sidebar-hover);
+    transform: scale(1.1);
+}
+
+.sidebar.collapsed .toggle-btn {
+    transform: rotate(180deg);
+}
+
+.sidebar-menu {
+    padding: 1.5rem 0;
+    list-style: none;
+    margin: 0;
+}
+
+.sidebar-menu li {
+    margin-bottom: 0.25rem;
+    padding: 0 1rem;
+}
+
+.sidebar-menu a {
+    display: flex;
+    align-items: center;
+    padding: 0.875rem 1rem;
+    color: var(--sidebar-text);
+    text-decoration: none;
+    transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    white-space: nowrap;
+    border-radius: 12px;
+    font-weight: 500;
+    font-size: 0.9rem;
+    letter-spacing: 0.025em;
+    position: relative;
+    overflow: hidden;
+}
+
+.sidebar-menu a::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 0;
+    background: var(--sidebar-accent);
+    transition: width 0.3s ease;
+    border-radius: 0 6px 6px 0;
+}
+
+.sidebar-menu a:hover {
+    background: var(--sidebar-hover);
+    color: var(--sidebar-text-hover);
+    transform: translateX(4px);
+    box-shadow: 0 4px 12px rgba(59, 130, 246, 0.15);
+}
+
+.sidebar-menu a:hover::before {
+    width: 4px;
+}
+
+.sidebar-menu a.active {
+    background: var(--sidebar-active);
+    color: var(--sidebar-text-hover);
+    box-shadow: 0 4px 15px rgba(59, 130, 246, 0.2);
+    font-weight: 600;
+}
+
+.sidebar-menu a.active::before {
+    width: 4px;
+}
+
+/* Reports uses standard sidebar item styling (same as Job Fair Events) */
+
+.sidebar-menu i {
+    min-width: 24px;
+    font-size: 1.1rem;
+    text-align: center;
+    margin-right: 0.875rem;
+    color: var(--sidebar-accent);
+    transition: all 0.3s ease;
+}
+
+.sidebar-menu a:hover i {
+    transform: scale(1.1);
+    filter: brightness(1.2);
+}
+
+.sidebar-menu span {
+    transition: all 0.3s ease;
+    font-weight: inherit;
+}
+
+.sidebar.collapsed .sidebar-menu span {
+    display: none;
+}
+
+.sidebar.collapsed .sidebar-header h3 {
+    display: none;
+}
+
+.sidebar.collapsed .logo-container {
+    justify-content: center;
+}
+
+.sidebar.collapsed .sidebar-logo {
+    margin-right: 0;
+    width: 40px;
+    height: 40px;
+}
+
+.sidebar.collapsed .sidebar-menu a {
+    justify-content: center;
+    padding: 0.875rem 0.5rem;
+}
+
+.sidebar.collapsed .sidebar-menu i {
+    margin-right: 0;
+    font-size: 1.25rem;
+}
+
+/* Tooltip for collapsed sidebar */
+.sidebar.collapsed .sidebar-menu a {
+    position: relative;
+}
+
+.sidebar.collapsed .sidebar-menu a:hover::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    left: 100%;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.9);
+    color: white;
+    padding: 0.5rem 0.75rem;
+    border-radius: 6px;
+    font-size: 0.875rem;
+    white-space: nowrap;
+    z-index: 1000;
+    margin-left: 0.75rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+}
+
+/* Main Content Adjustment */
+.main-content {
+    margin-left: 280px;
+    padding: 0;
+    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    min-height: 100vh;
+}
+
+.main-content.expanded {
+    margin-left: 80px;
+}
+
+/* Enhanced Responsive Design */
+@media (max-width: 1024px) {
+    .sidebar {
+        width: 80px;
+        transform: translateX(-100%);
+    }
+    
+    .sidebar.expanded {
+        width: 280px;
+        transform: translateX(0);
+        box-shadow: 0 0 50px rgba(0, 0, 0, 0.5);
+    }
+    
+    .main-content {
+        margin-left: 0;
+    }
+    
+    .main-content.sidebar-open {
+        margin-left: 0;
+    }
+    
+    .sidebar-menu span {
+        display: none;
+    }
+    
+    .sidebar.expanded .sidebar-menu span {
+        display: inline;
+    }
+    
+    .sidebar-header h3 {
+        display: none;
+    }
+    
+    .sidebar.expanded .sidebar-header h3 {
+        display: block;
+    }
+    
+    .logo-container {
+        justify-content: center;
+    }
+    
+    .sidebar-logo {
+        width: 40px;
+        height: 40px;
+        margin-right: 0;
+    }
+    
+    .sidebar.expanded .logo-container {
+        justify-content: flex-start;
+    }
+    
+    .sidebar.expanded .sidebar-logo {
+        margin-right: 0.75rem;
+        width: 45px;
+        height: 45px;
+    }
+}
+
+@media (max-width: 768px) {
+    .sidebar {
+        width: 100vw;
+        transform: translateX(-100%);
+    }
+    
+    .sidebar.expanded {
+        width: 100vw;
+        transform: translateX(0);
+    }
+    
+    .sidebar-menu {
+        padding: 1rem 0;
+    }
+    
+    .sidebar-menu li {
+        padding: 0 1.5rem;
+        margin-bottom: 0.5rem;
+    }
+    
+    .sidebar-menu a {
+        padding: 1rem;
+        font-size: 1rem;
+        border-radius: 16px;
+    }
+    
+    .sidebar-header {
+        padding: 1.25rem 1.5rem;
+    }
+}
+
+/* Dark mode enhancements */
+@media (prefers-color-scheme: dark) {
+    .sidebar {
+        background: linear-gradient(180deg, #0f1419 0%, #000000 100%);
+        box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.5);
+    }
+}
+
+/* Mobile overlay */
+.sidebar-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    z-index: 999;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+}
+
+.sidebar-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Accessibility improvements */
+.sidebar-menu a:focus {
+    outline: 2px solid var(--sidebar-accent);
+    outline-offset: 2px;
+}
+
+.sidebar-header .toggle-btn:focus {
+    outline: 2px solid var(--sidebar-accent);
+    outline-offset: 2px;
+}
+
+/* Smooth scrolling for sidebar */
+.sidebar {
+    scroll-behavior: smooth;
+}
+
+/* Enhanced loading state */
+.sidebar.loading {
+    opacity: 0.7;
+    pointer-events: none;
+}
+
+.sidebar.loading::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+    animation: shimmer 1.5s infinite;
+}
+
+@keyframes shimmer {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(100%); }
+}
+
+/* Modern glassmorphism effect for sidebar header */
+.sidebar-header {
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Enhanced focus indicators for better accessibility */
+.sidebar-menu a:focus-visible {
+    box-shadow: 0 0 0 2px var(--sidebar-accent), 0 4px 12px rgba(59, 130, 246, 0.3);
+    transform: translateX(4px);
+}
+
+/* Micro-interactions for better UX */
+.sidebar-menu a {
+    transform-origin: left center;
+}
+
+.sidebar-menu a:active {
+    transform: translateX(4px) scale(0.98);
+}
+
+/* Status indicator for active items */
+.sidebar-menu a.active::after {
+    content: '';
+    position: absolute;
+    right: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 6px;
+    height: 6px;
+    background: var(--sidebar-accent);
+    border-radius: 50%;
+    box-shadow: 0 0 8px rgba(59, 130, 246, 0.6);
+}
+
+.sidebar.collapsed .sidebar-menu a.active::after {
+    display: none;
+} 

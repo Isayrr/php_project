@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="800" height="1000" viewBox="0 0 800 1000" xmlns="http://www.w3.org/2000/svg">
+    <!-- Background -->
+    <rect width="800" height="1000" fill="#ffffff"/>
+    
+    <!-- Left Sidebar -->
+    <rect x="0" y="0" width="250" height="1000" fill="#2c3e50"/>
+    
+    <!-- Profile Section -->
+    <circle cx="125" cy="100" r="50" fill="#3498db"/>
+    <text x="125" y="180" font-family="Arial" font-size="20" fill="#ffffff" text-anchor="middle">JOHN DOE</text>
+    <text x="125" y="200" font-family="Arial" font-size="14" fill="#b0b8c1" text-anchor="middle">Software Engineer</text>
+    
+    <!-- Contact Info -->
+    <text x="125" y="250" font-family="Arial" font-size="12" fill="#ffffff" text-anchor="middle">email@example.com</text>
+    <text x="125" y="270" font-family="Arial" font-size="12" fill="#ffffff" text-anchor="middle">(555) 123-4567</text>
+    <text x="125" y="290" font-family="Arial" font-size="12" fill="#ffffff" text-anchor="middle">New York, NY</text>
+    
+    <!-- Skills Section -->
+    <text x="125" y="350" font-family="Arial" font-size="16" fill="#3498db" text-anchor="middle">SKILLS</text>
+    <line x1="50" y1="370" x2="200" y2="370" stroke="#3498db" stroke-width="2"/>
+    
+    <!-- Main Content Area -->
+    <rect x="270" y="50" width="500" height="40" fill="#f8f9fa"/>
+    <text x="520" y="75" font-family="Arial" font-size="18" fill="#2c3e50" text-anchor="middle">EXPERIENCE</text>
+    
+    <rect x="270" y="120" width="500" height="40" fill="#f8f9fa"/>
+    <text x="520" y="145" font-family="Arial" font-size="18" fill="#2c3e50" text-anchor="middle">EDUCATION</text>
+    
+    <rect x="270" y="190" width="500" height="40" fill="#f8f9fa"/>
+    <text x="520" y="215" font-family="Arial" font-size="18" fill="#2c3e50" text-anchor="middle">PROJECTS</text>
+    
+    <!-- Content Lines -->
+    <line x1="270" y1="100" x2="770" y2="100" stroke="#e9ecef" stroke-width="1"/>
+    <line x1="270" y1="170" x2="770" y2="170" stroke="#e9ecef" stroke-width="1"/>
+    <line x1="270" y1="240" x2="770" y2="240" stroke="#e9ecef" stroke-width="1"/>
+    
+    <!-- Template Label -->
+    <text x="400" y="950" font-family="Arial" font-size="16" fill="#2c3e50" text-anchor="middle">Modern Template</text>
+</svg> 

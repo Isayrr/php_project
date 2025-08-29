@@ -1,0 +1,441 @@
+/* Resume Template Styles */
+:root {
+    --primary-color: #3498db;
+    --secondary-color: #2c3e50;
+    --accent-color: #e74c3c;
+    --light-color: #ecf0f1;
+    --dark-color: #2c3e50;
+    --text-color: #333333;
+    --text-muted: #7f8c8d;
+    --border-color: #ddd;
+    --success-color: #2ecc71;
+    --warning-color: #f39c12;
+    --error-color: #e74c3c;
+}
+
+/* Modern Template */
+.resume-modern {
+    font-family: 'Roboto', sans-serif;
+    color: var(--text-color);
+    padding: 30px;
+    position: relative;
+}
+
+.resume-modern .resume-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 40px;
+}
+
+.resume-modern .profile-img-container {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 5px solid white;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+}
+
+.resume-modern .profile-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.resume-modern .resume-name {
+    font-size: 36px;
+    font-weight: 700;
+    margin-bottom: 8px;
+    color: var(--primary-color);
+}
+
+.resume-modern .resume-title {
+    font-size: 18px;
+    color: var(--text-muted);
+    margin-bottom: 20px;
+}
+
+.resume-modern .resume-contact {
+    margin-top: 15px;
+}
+
+.resume-modern .contact-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+.resume-modern .contact-item i {
+    width: 25px;
+    color: var(--primary-color);
+    margin-right: 10px;
+}
+
+.resume-modern .section {
+    margin-bottom: 30px;
+}
+
+.resume-modern .section-title {
+    font-size: 22px;
+    color: var(--primary-color);
+    margin-bottom: 15px;
+    padding-bottom: 8px;
+    border-bottom: 2px solid var(--primary-color);
+}
+
+.resume-modern .item {
+    margin-bottom: 20px;
+}
+
+.resume-modern .item-title {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+.resume-modern .item-subtitle {
+    font-size: 16px;
+    color: var(--text-muted);
+    margin-bottom: 5px;
+}
+
+.resume-modern .item-date {
+    font-size: 14px;
+    color: var(--primary-color);
+    font-style: italic;
+    margin-bottom: 8px;
+}
+
+.resume-modern .item-content {
+    font-size: 15px;
+    line-height: 1.6;
+}
+
+.resume-modern .skills-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.resume-modern .skill-tag {
+    background-color: var(--light-color);
+    color: var(--dark-color);
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 14px;
+    display: inline-flex;
+    align-items: center;
+}
+
+/* Professional Template */
+.resume-professional {
+    font-family: 'Georgia', serif;
+    color: var(--text-color);
+    padding: 40px;
+    position: relative;
+    background-color: #fff;
+}
+
+.resume-professional .resume-header {
+    text-align: center;
+    margin-bottom: 40px;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 20px;
+}
+
+.resume-professional .profile-img-container {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin: 0 auto 20px;
+    border: 3px solid var(--border-color);
+}
+
+.resume-professional .profile-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.resume-professional .resume-name {
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 8px;
+    color: var(--secondary-color);
+}
+
+.resume-professional .resume-title {
+    font-size: 18px;
+    color: var(--text-muted);
+    margin-bottom: 15px;
+    font-style: italic;
+}
+
+.resume-professional .resume-contact {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.resume-professional .contact-item {
+    display: flex;
+    align-items: center;
+}
+
+.resume-professional .contact-item i {
+    margin-right: 8px;
+    color: var(--secondary-color);
+}
+
+.resume-professional .section {
+    margin-bottom: 30px;
+}
+
+.resume-professional .section-title {
+    font-size: 20px;
+    color: var(--secondary-color);
+    margin-bottom: 15px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.resume-professional .item {
+    margin-bottom: 20px;
+}
+
+.resume-professional .item-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 5px;
+}
+
+.resume-professional .item-title {
+    font-size: 17px;
+    font-weight: 600;
+}
+
+.resume-professional .item-date {
+    font-size: 14px;
+    color: var(--text-muted);
+}
+
+.resume-professional .item-subtitle {
+    font-size: 15px;
+    color: var(--text-color);
+    font-style: italic;
+    margin-bottom: 8px;
+}
+
+.resume-professional .item-content {
+    font-size: 15px;
+    line-height: 1.5;
+}
+
+.resume-professional .skills-list {
+    columns: 2;
+}
+
+.resume-professional .skill-item {
+    margin-bottom: 10px;
+    break-inside: avoid;
+}
+
+.resume-professional .skill-name {
+    font-weight: 600;
+    margin-bottom: 3px;
+}
+
+.resume-professional .skill-level {
+    height: 5px;
+    background-color: var(--light-color);
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.resume-professional .skill-progress {
+    height: 100%;
+    background-color: var(--secondary-color);
+}
+
+/* Creative Template */
+.resume-creative {
+    font-family: 'Montserrat', sans-serif;
+    color: var(--text-color);
+    padding: 0;
+    position: relative;
+    display: flex;
+}
+
+.resume-creative .sidebar {
+    width: 35%;
+    background-color: var(--secondary-color);
+    color: white;
+    padding: 40px 20px;
+}
+
+.resume-creative .main-content {
+    width: 65%;
+    padding: 40px;
+}
+
+.resume-creative .profile-img-container {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin: 0 auto 20px;
+    border: 5px solid rgba(255,255,255,0.2);
+}
+
+.resume-creative .profile-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.resume-creative .resume-name {
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 5px;
+    text-align: center;
+}
+
+.resume-creative .resume-title {
+    font-size: 16px;
+    color: rgba(255,255,255,0.8);
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.resume-creative .sidebar-section {
+    margin-bottom: 25px;
+}
+
+.resume-creative .sidebar-section-title {
+    font-size: 18px;
+    margin-bottom: 15px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid rgba(255,255,255,0.2);
+}
+
+.resume-creative .contact-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.resume-creative .contact-item i {
+    width: 20px;
+    margin-right: 10px;
+}
+
+.resume-creative .skills-list {
+    list-style: none;
+    padding: 0;
+}
+
+.resume-creative .skill-item {
+    margin-bottom: 10px;
+}
+
+.resume-creative .skill-name {
+    margin-bottom: 5px;
+}
+
+.resume-creative .skill-level {
+    height: 5px;
+    background-color: rgba(255,255,255,0.2);
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.resume-creative .skill-progress {
+    height: 100%;
+    background-color: var(--accent-color);
+}
+
+.resume-creative .section {
+    margin-bottom: 30px;
+}
+
+.resume-creative .section-title {
+    font-size: 22px;
+    color: var(--secondary-color);
+    margin-bottom: 15px;
+    padding-bottom: 5px;
+    border-bottom: 2px solid var(--accent-color);
+}
+
+.resume-creative .item {
+    margin-bottom: 20px;
+    position: relative;
+    padding-left: 20px;
+}
+
+.resume-creative .item:before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 8px;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: var(--accent-color);
+}
+
+.resume-creative .item-title {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+.resume-creative .item-subtitle {
+    font-size: 16px;
+    color: var(--text-muted);
+    margin-bottom: 5px;
+}
+
+.resume-creative .item-date {
+    font-size: 14px;
+    color: var(--text-muted);
+    margin-bottom: 8px;
+}
+
+.resume-creative .item-content {
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+/* Responsive styles for all templates */
+@media (max-width: 768px) {
+    .resume-modern .resume-header,
+    .resume-creative {
+        flex-direction: column;
+    }
+    
+    .resume-modern .profile-info {
+        text-align: center;
+        margin-top: 20px;
+    }
+    
+    .resume-modern .profile-img-container,
+    .resume-professional .profile-img-container {
+        margin: 0 auto 20px;
+    }
+    
+    .resume-creative .sidebar,
+    .resume-creative .main-content {
+        width: 100%;
+    }
+    
+    .resume-professional .resume-contact {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .resume-professional .skills-list {
+        columns: 1;
+    }
+} 

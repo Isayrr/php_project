@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="800" height="1000" viewBox="0 0 800 1000" xmlns="http://www.w3.org/2000/svg">
+    <!-- Background -->
+    <rect width="800" height="1000" fill="#ffffff"/>
+    
+    <!-- Header -->
+    <text x="400" y="80" font-family="Arial" font-size="28" fill="#000000" text-anchor="middle" font-weight="bold">JOHN DOE</text>
+    <line x1="200" y1="100" x2="600" y2="100" stroke="#000000" stroke-width="2"/>
+    <text x="400" y="130" font-family="Arial" font-size="16" fill="#000000" text-anchor="middle">Software Engineer</text>
+    
+    <!-- Contact Info -->
+    <text x="400" y="160" font-family="Arial" font-size="12" fill="#000000" text-anchor="middle">email@example.com • (555) 123-4567 • New York, NY</text>
+    
+    <!-- Section Headers -->
+    <text x="100" y="220" font-family="Arial" font-size="16" fill="#000000" font-weight="bold">PROFESSIONAL EXPERIENCE</text>
+    <line x1="100" y1="230" x2="700" y2="230" stroke="#000000" stroke-width="1"/>
+    
+    <text x="100" y="400" font-family="Arial" font-size="16" fill="#000000" font-weight="bold">EDUCATION</text>
+    <line x1="100" y1="410" x2="700" y2="410" stroke="#000000" stroke-width="1"/>
+    
+    <text x="100" y="580" font-family="Arial" font-size="16" fill="#000000" font-weight="bold">SKILLS</text>
+    <line x1="100" y1="590" x2="700" y2="590" stroke="#000000" stroke-width="1"/>
+    
+    <!-- Content Lines -->
+    <line x1="100" y1="300" x2="700" y2="300" stroke="#000000" stroke-width="0.5"/>
+    <line x1="100" y1="350" x2="700" y2="350" stroke="#000000" stroke-width="0.5"/>
+    
+    <line x1="100" y1="480" x2="700" y2="480" stroke="#000000" stroke-width="0.5"/>
+    <line x1="100" y1="530" x2="700" y2="530" stroke="#000000" stroke-width="0.5"/>
+    
+    <line x1="100" y1="660" x2="700" y2="660" stroke="#000000" stroke-width="0.5"/>
+    <line x1="100" y1="710" x2="700" y2="710" stroke="#000000" stroke-width="0.5"/>
+    
+    <!-- Template Label -->
+    <text x="400" y="950" font-family="Arial" font-size="16" fill="#000000" text-anchor="middle">Classic Template</text>
+</svg> 

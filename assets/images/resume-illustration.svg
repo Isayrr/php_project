@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="300" viewBox="0 0 400 300">
+  <style>
+    .paper {
+      fill: #fff;
+      stroke: #ddd;
+      stroke-width: 3;
+    }
+    .line {
+      fill: #e0e0e0;
+    }
+    .title {
+      fill: #3a8ffe;
+    }
+    .subtitle {
+      fill: #6c757d;
+    }
+    .text {
+      fill: #adb5bd;
+    }
+    .photo {
+      fill: #f8f9fa;
+      stroke: #e9ecef;
+      stroke-width: 2;
+    }
+    .photo-icon {
+      fill: #adb5bd;
+    }
+  </style>
+  
+  <!-- Resume Paper Background -->
+  <rect class="paper" x="50" y="30" width="300" height="240" rx="5" ry="5" filter="drop-shadow(3px 5px 5px rgba(0,0,0,0.2))"/>
+  
+  <!-- Photo Placeholder -->
+  <rect class="photo" x="70" y="50" width="70" height="70" rx="35" ry="35"/>
+  <circle class="photo-icon" cx="105" cy="70" r="10"/>
+  <path class="photo-icon" d="M90,90 C90,75 120,75 120,90 L90,90 Z"/>
+  
+  <!-- Title Line -->
+  <rect class="title" x="150" y="60" width="180" height="15" rx="2" ry="2"/>
+  
+  <!-- Subtitle Line -->
+  <rect class="subtitle" x="150" y="85" width="140" height="10" rx="2" ry="2"/>
+  
+  <!-- Text Lines -->
+  <rect class="line" x="70" y="140" width="260" height="10" rx="2" ry="2"/>
+  <rect class="line" x="70" y="160" width="260" height="10" rx="2" ry="2"/>
+  <rect class="line" x="70" y="180" width="260" height="10" rx="2" ry="2"/>
+  <rect class="line" x="70" y="200" width="220" height="10" rx="2" ry="2"/>
+  <rect class="line" x="70" y="220" width="180" height="10" rx="2" ry="2"/>
+  
+  <!-- Skills Tags -->
+  <rect class="subtitle" x="70" y="250" width="50" height="12" rx="6" ry="6"/>
+  <rect class="subtitle" x="130" y="250" width="40" height="12" rx="6" ry="6"/>
+  <rect class="subtitle" x="180" y="250" width="60" height="12" rx="6" ry="6"/>
+</svg> 

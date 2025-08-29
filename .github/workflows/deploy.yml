@@ -12,21 +12,35 @@ concurrency:
 jobs:
   deploy:
     runs-on: ubuntu-latest
+    env:
+      FTP_SERVER_VAL: ${{ secrets.FTP_SERVER || vars.FTP_SERVER }}
+      FTP_USERNAME_VAL: ${{ secrets.FTP_USERNAME || vars.FTP_USERNAME }}
+      FTP_PASSWORD_VAL: ${{ secrets.FTP_PASSWORD || vars.FTP_PASSWORD }}
+      FTP_SERVER_DIR_VAL: ${{ secrets.FTP_SERVER_DIR || vars.FTP_SERVER_DIR }}
+      FTP_PROTOCOL_VAL: ${{ vars.FTP_PROTOCOL || 'ftp' }}
     steps:
       - name: Checkout
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
 
+      - name: Validate required inputs
+        shell: bash
+        run: |
+          if [[ -z "${FTP_SERVER_VAL}" || -z "${FTP_USERNAME_VAL}" || -z "${FTP_PASSWORD_VAL}" || -z "${FTP_SERVER_DIR_VAL}" ]]; then
+            echo "Missing required secrets/variables. Please set FTP_SERVER, FTP_USERNAME, FTP_PASSWORD, FTP_SERVER_DIR (as Secrets or Variables).";
+            exit 1;
+          fi
+
       - name: Deploy to FTP server
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
         with:
-          server: ${{ secrets.FTP_SERVER }}
-          username: ${{ secrets.FTP_USERNAME }}
-          password: ${{ secrets.FTP_PASSWORD }}
-          server-dir: ${{ secrets.FTP_SERVER_DIR }}
-          # protocol can be ftp, ftps, or sftp. Defaults to ftp.
-          protocol: ftp
+          server: ${{ env.FTP_SERVER_VAL }}
+          username: ${{ env.FTP_USERNAME_VAL }}
+          password: ${{ env.FTP_PASSWORD_VAL }}
+          server-dir: ${{ env.FTP_SERVER_DIR_VAL }}
+          # protocol can be ftp, ftps, or sftp.
+          protocol: ${{ env.FTP_PROTOCOL_VAL }}
           # Set the local folder to deploy (defaults to project root)
           local-dir: ./
           # Prevent deleting files on the server (safer for uploads)
